@@ -1,0 +1,20 @@
+</head>
+<body>
+		<a href="#0" class="cd-top">Top</a>
+		<div class="header">
+		<div class="header_mid">
+			<div class="logo fl"><img src="/Public/Images/logo.jpg"/></div>
+			<div class="header_r fr pr">
+			<span class="c-f f-12 mt-10 t-r fr">全国服务热线：020-84130064 / 400-678-5751</span>
+			<ul class="nav fr pa">
+			<?php
+				$navs = M("category")->where("fid=0")->limit(0,8)->select();
+			?>
+			<volist name='navs' id='v'>
+				<li><a href="{:U($v[url])}" class="language-tg" data-title="{$v.ename}">{$v.name}</a></li>
+			</volist>
+			</ul>
+			</div>	
+		</div>
+	</div>
+<!-- 	banner -->

@@ -1,0 +1,31 @@
+<include file="public/orther_all_nav" />
+
+	    <div class="con_r fr">
+	      <ul class="product-ul clear">
+	      	<volist name="this_product" id="v">
+
+	      		<li class="fl">
+	      			<a class="top-img oh pr db" href='{:U("main")}?id={$v.pid}'>
+	      				<img src="{$v.imgurl.0}"   alt="">
+	      				<span class="more pa tc">MORE</span>
+	      			</a>
+					<p>
+						<a class="title db tc wen-oh" href='{:U("main")}?id={$v.pid}'>{$v.title}</a>
+					</p>
+	      		</li>
+
+			</volist>
+	      </ul>  	
+	      <div class="page-list">
+	      	{$page}
+	      </div>
+	    </div>
+	</div>
+</div>
+
+
+
+
+<div class="clearxd"></div>
+
+<include file="public/footer" />

@@ -1,0 +1,66 @@
+    <script type="text/javascript" charset="utf-8" src="/Public/admin/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/Public/admin/ueditor/ueditor.all.min.js"> </script>
+            <h1 class="page-title">发布文章</h1>
+        </div>
+                <ul class="breadcrumb">
+            <li><a href="index.html">Home</a> <span class="divider">/</span></li>
+            <li class="active">发布文章</li>
+        </ul>
+
+        <div class="container-fluid">
+            <div class="row-fluid">
+                    
+<div class="btn-toolbar">
+    <button class="btn btn-primary" onClick="location='{:U('list_news')}'"><i class="icon-list"></i> 文章列表</button>
+  <div class="btn-group">
+  </div>
+</div>
+<div class="well">
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane active in" id="home">
+        <form action="" method="post" enctype="multipart/form-data">新闻分类</label>
+            <input type="hidden" name="id" value="{$data.id}"/>
+            <select name="cid" class="input-xlarge">
+              {$navs}
+            </select>
+            <label>新闻标题</label>
+            <input type="text" name="title" value="{$data.title}" class="input-xxlarge">
+            <label>新闻描述</label>
+            <input type="text" name="desc" value="{$data.desc}" class="input-xxlarge">
+            <label>新闻图片</label>
+            <input type="file" name="thumb" value="" class="input-xxlarge">
+            <label>新闻展示</label>
+            <input type="radio" name="is_show" <eq name="data.is_show" value="1"> checked </eq> value="1" class="input-xxlarge">是
+            <input type="radio" name="is_show" <eq name="data.is_show" value="0"> checked </eq> value="0" class="input-xxlarge">否
+            <label>新闻内容</label>
+            <script id="editor" type="text/plain" style="width:900px;height:500px;">{$data.content|htmlspecialchars_decode}</script><!-- <!-- 
+            <label>导航降序</label>
+            <textarea value="Smith"  rows="3" class="input-xxlarge"></textarea> -->
+            <label></label>
+            <input class="btn btn-primary" type="submit" value="提交" />
+        </form>
+      </div>
+  </div>
+
+</div>
+
+<div class="modal small hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Delete Confirmation</h3>
+  </div>
+  <div class="modal-body">
+    
+    <p class="error-text"><i class="icon-warning-sign modal-icon"></i>Are you sure you want to delete the user?</p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+    <button class="btn btn-danger" data-dismiss="modal">Delete</button>
+  </div>
+</div>
+    <script>
+      window.UEDITOR_CONFIG.serverUrl = "/php/controller.php";
+      var ue = UE.getEditor('editor');
+    </script>
+
+                    

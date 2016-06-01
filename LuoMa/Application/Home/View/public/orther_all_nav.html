@@ -1,0 +1,36 @@
+	<include file="public/header" />
+
+	<include file="public/orther_all" />
+
+	<include file="public/center" />
+	
+			<div class="banner1">
+				<div class="ban_mid">
+				<img src="/Public/Images/banner1.jpg" alt="" style="width:1000px;">
+				</div>
+			</div>
+
+	<div class="con_mid w1000">
+
+			<div class="tt">
+	 <p class="fright">
+     <a href="/">首页</a><img src="/Public/Images/sanjiao.png" class="mr-5 ml-5">
+     <a href="{:U($parent_nav['url'])}">{$parent_nav.name}</a><img src="/Public/Images/sanjiao.png" class="mr-5 ml-5">
+     <a href="">{$nav.0.name}</a>
+     </p>
+
+	 </div>
+
+	  <div class="con_l fl">
+	        	<dl>
+	        		<dt><img src="/Public/Images/row.png" alt=""class="mr-5">{$parent_nav.name}<span>&nbsp;&nbsp;/&nbsp;{$parent_nav.ename}</span></dt>
+	        		<div class="clearxd"></div>
+                    <volist name="nav" id="v" key="k">
+	        	      	<dd <if condition="$k==1">class="mr"<elseif condition="$k==5"/>style="border:none;"</if> ><a href="javascript:;">{$v.name}</a></dd>
+                    </volist>
+	        		<!-- <dd "><a href="javascript:;">电子相册</a></dd> -->
+	        	</dl>
+	        	<div class="clearxd"></div>
+	        	<div class="tu"><a href="{:U('product/main')}"><img src="/Public/Images/ima2.png" alt=""></a></div>
+	        	<div class="tu"><a href="{:U('product/main')}"><img src="/Public/Images/ima2.png" alt=""></a></div>
+	    </div>

@@ -1,0 +1,46 @@
+    	<div class="footer">
+<div class="foot">
+         <div class="foot1 foot1_border layout2">
+         	<ul class="clear oh">
+                <?php
+                     $navs = M("category")->where("fid=0")->limit(8,8)->select();
+                 ?>
+                 <volist name="navs" id="v" key="k">
+                     <li>
+                       <div class="foot1_s" <if condition="$k==5">style="background: none;</if>">
+                            <b> <a href="{$v.url}">{$v.name} | {$v.ename} </a></b>
+                            <ul>
+                            <?php
+                                $cid = $v['cid'];
+                                $son_nav = M("category")->where("fid=$cid")->select();
+                            ?>
+                                <volist name="son_nav" id="vv">
+                                    <li><a href="{$vv.url}">{$vv.name}</a></li>
+                                </volist>
+                            </ul>
+                    	</div>
+                    </li>
+                </volist>
+            </ul>
+        </div>
+      
+         
+	</div>
+		</div>
+		<div class="foot2">
+			<p class="t-c ">粤ICP备120860000号     Copyright © 2015 罗马国际 All Rights Reserved  </p>
+		</div>
+	</div>
+
+
+
+    <!-- Swiper JS -->
+
+
+
+
+
+
+	
+</body>
+</html>

@@ -1,0 +1,37 @@
+<include file="public/orther_all_nav" />
+
+	    <div class="con_r fr news">
+	      <ul class="news-ul">
+			<volist name="this_news" id="v">
+	      		<li class="pb-10 clear">
+	      			<div class="fl left">
+	      				<a href="javascript:;">
+	      					<img src="{$v.thumb}" alt="">
+	      				</a>
+	      			</div>
+	      			<div class="fr right">
+	      				<h4 class="news-title pr">
+	      					{$v.title}
+	      				<span class="pa" style="right:0; color:#1a1a1a; font-size:14px;"><?php echo date("Y-m-s",$v['time']) ?></span>
+	      				</h4>
+
+						<p>{$v.desc}</p>
+						<a href=""class="fr mt-30">MORE</a>
+	      			</div>
+	      		</li>
+			</volist>
+	      </ul>  	
+	      <div class="page-list">
+	      	{$page}
+	      </div>
+	    </div>
+	</div>
+</div>
+
+
+
+
+<div class="clearxd"></div>
+
+
+<include file="public/footer"/>
